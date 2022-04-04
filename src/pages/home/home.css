@@ -165,10 +165,12 @@
 .sm-card-fav:hover {
   border: 0;
 }
+
 .sm-card-flex-rating {
   display: flex;
   justify-content: flex-start;
 }
+
 .sm-card-flex-rating .sm-card-rating {
   margin-left: auto;
   color: var(--COLOR-HEADER-FONT-DARK);
@@ -177,6 +179,7 @@
   align-items: center;
   font-size: 1.8rem;
 }
+
 .sm-card-info .sm-card-info-price {
   font-weight: 800;
   gap: 10px;
@@ -196,9 +199,6 @@
   gap: 3px;
 }
 
-/* .sm-card-info .sm-card-info-price-save {
-  color: var(--COLOR-RED);
-} */
 /* MAIN ENDS */
 
 /* MEDIA QUERIES */
