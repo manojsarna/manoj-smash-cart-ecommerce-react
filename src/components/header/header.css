@@ -117,6 +117,14 @@
   display: none;
 }
 
+.sm-action-icon-btn-wrapper .sm-header-nav-user-avatar {
+  padding: 5px 10px;
+  margin-bottom: 3px;
+}
+
+.icon .icon-hide {
+  display: none;
+}
 /* HEADER ENDS */
 
 /* MEDIA QUERIES FOR HEADERS*/

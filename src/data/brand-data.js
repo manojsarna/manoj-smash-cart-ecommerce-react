@@ -4,25 +4,25 @@ export const brands = [
   {
     _id: uuid(),
     brandName: "Yonex",
-    value: "yonex",
+    brand: "yonex",
     image: images.brands.yonex,
   },
   {
     _id: uuid(),
     brandName: "Lining",
-    value: "lining",
+    brand: "lining",
     image: images.brands.lining,
   },
   {
     _id: uuid(),
     brandName: "Victor",
-    value: "victor",
+    brand: "victor",
     image: images.brands.victor,
   },
   {
     _id: uuid(),
     brandName: "Carlton",
-    value: "carlton",
+    brand: "carlton",
     image: images.brands.carlton,
   },
 ];
