@@ -1,6 +1,7 @@
+import { useDocTitle } from "../../hooks/useDocTitle";
 import "./cart.css";
 
 export function Cart() {
-  document.title = "Cart - SmashCart - Manoj Sarna";
+  useDocTitle("Cart - SmashCart - Manoj Sarna");
   return <main className="cart">Cart Page</main>;
 }

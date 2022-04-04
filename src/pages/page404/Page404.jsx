@@ -1,7 +1,8 @@
+import { useDocTitle } from "../../hooks/useDocTitle";
 import "./page404.css";
 
 export function Page404() {
-  document.title = "404 - SmashCart - Manoj Sarna";
+  useDocTitle("404 - SmashCart - Manoj Sarna");
   return (
     <main className="page404">
       <section className="page404-section">

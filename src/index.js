@@ -5,6 +5,12 @@ import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from "./context/theme-context/theme-context";
+import {
+  AuthProvider,
+  CartProvider,
+  ToastProvider,
+  WishListProvider,
+} from "./context";
 
 // Call make Server
 makeServer();
@@ -12,9 +18,17 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider>
-      <Router>
-        <App />
-      </Router>
+      <ToastProvider>
+        <AuthProvider>
+          <CartProvider>
+            <WishListProvider>
+              <Router>
+                <App />
+              </Router>
+            </WishListProvider>
+          </CartProvider>
+        </AuthProvider>
+      </ToastProvider>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")

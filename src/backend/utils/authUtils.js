@@ -1,5 +1,6 @@
 import { Response } from "miragejs";
-const jwt = require("jsonwebtoken");
+// const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 import dayjs from "dayjs";
 
 export const requiresAuth = function (request) {

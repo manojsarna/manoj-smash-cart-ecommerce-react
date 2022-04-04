@@ -4,25 +4,25 @@ export const categories = [
   {
     _id: uuid(),
     categoryName: "Rackets",
-    value: "rackets",
+    category: "rackets",
     image: images.categories.rackets,
   },
   {
     _id: uuid(),
     categoryName: "Kitbags",
-    value: "kitbags",
+    category: "kitbags",
     image: images.categories.kitbags,
   },
   {
     _id: uuid(),
     categoryName: "Shoes",
-    value: "shoes",
+    category: "shoes",
     image: images.categories.shoes,
   },
   {
     _id: uuid(),
     categoryName: "Shuttles",
-    value: "shuttles",
+    category: "shuttles",
     image: images.categories.shuttles,
   },
 ];

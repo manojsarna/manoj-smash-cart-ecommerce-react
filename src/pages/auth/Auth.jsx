@@ -1,6 +1,19 @@
+import { useState } from "react";
+import { useDocTitle } from "../../hooks/useDocTitle";
 import "./auth.css";
+import { Login, SignUp } from "./components";
 
 export function Auth() {
-  document.title = "Auth - SmashCart - Manoj Sarna";
-  return <main className="auth">Auth Page</main>;
+  useDocTitle("Auth - SmashTube - Manoj Sarna");
+  const [authVal, setAuthVal] = useState(true);
+
+  return (
+    <main className="sm-main-auth">
+      {authVal ? (
+        <Login setAuthVal={setAuthVal} />
+      ) : (
+        <SignUp setAuthVal={setAuthVal} />
+      )}
+    </main>
+  );
 }

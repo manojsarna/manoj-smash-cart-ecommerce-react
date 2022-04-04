@@ -31,12 +31,7 @@ html {
   width: 24rem;
 }
 
-.sm-card .sm-card-content {
-  padding: 10px;
-}
-
 .sm-card-content-brand {
-  margin-left: 5px;
   font-size: 1.3rem;
 }
 

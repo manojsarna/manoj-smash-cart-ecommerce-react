@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import images from "../../../../assets/images";
 
 export function Carousel() {
@@ -21,14 +22,16 @@ export function Carousel() {
       <div className="sm-main-carousel-btn sm-grid-content">
         <h1 className="main-heading color-p">Badminton Deals</h1>
         <h2 className="sub-main-heading color-p">Starting At ₹1299/-</h2>
-        <button
-          id="carousel-btn"
-          className="shop-now-hover btn btn-primary btn-bold"
-          title="CheckOut Product Listings"
-        >
-          <i className="fab fa-opencart"></i>
-          Shop Now
-        </button>
+        <Link to="/products" title="Go To Products">
+          <button
+            id="carousel-btn"
+            className="shop-now-hover btn btn-primary btn-bold"
+            title="CheckOut Product Listings"
+          >
+            <i className="fab fa-opencart"></i>
+            Shop Now
+          </button>
+        </Link>
       </div>
     </div>
   );

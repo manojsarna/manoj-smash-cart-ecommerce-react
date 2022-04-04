@@ -2,6 +2,7 @@ import { Server, Model, RestSerializer } from "miragejs";
 import {
   loginHandler,
   signupHandler,
+  verifyUser,
 } from "./backend/controllers/AuthController";
 import {
   addItemToCartHandler,
@@ -14,6 +15,10 @@ import {
   getCategoryHandler,
 } from "./backend/controllers/CategoryController";
 import {
+  getAllBrandsHandler,
+  getBrandHandler,
+} from "./backend/controllers/BrandController";
+import {
   getAllProductsHandler,
   getProductHandler,
 } from "./backend/controllers/ProductController";
@@ -25,6 +30,7 @@ import {
 import { categories } from "./backend/db/categories";
 import { products } from "./backend/db/products";
 import { users } from "./backend/db/users";
+import { brands } from "./backend/db/brand";
 
 export function makeServer({ environment = "development" } = {}) {
   return new Server({
@@ -35,6 +41,7 @@ export function makeServer({ environment = "development" } = {}) {
     models: {
       product: Model,
       category: Model,
+      brand: Model,
       user: Model,
       cart: Model,
       wishlist: Model,
@@ -53,6 +60,8 @@ export function makeServer({ environment = "development" } = {}) {
       );
 
       categories.forEach((item) => server.create("category", { ...item }));
+
+      brands.forEach((item) => server.create("brand", { ...item }));
     },
 
     routes() {
@@ -60,6 +69,7 @@ export function makeServer({ environment = "development" } = {}) {
       // auth routes (public)
       this.post("/auth/signup", signupHandler.bind(this));
       this.post("/auth/login", loginHandler.bind(this));
+      this.post("/auth/verify", verifyUser.bind(this));
 
       // products routes (public)
       this.get("/products", getAllProductsHandler.bind(this));
@@ -68,6 +78,10 @@ export function makeServer({ environment = "development" } = {}) {
       // categories routes (public)
       this.get("/categories", getAllCategoriesHandler.bind(this));
       this.get("/categories/:categoryId", getCategoryHandler.bind(this));
+
+      // brands routes (public)
+      this.get("/brands", getAllBrandsHandler.bind(this));
+      this.get("/brands/:brandId", getBrandHandler.bind(this));
 
       // cart routes (private)
       this.get("/user/cart", getCartItemsHandler.bind(this));
