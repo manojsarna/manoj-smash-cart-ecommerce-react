@@ -6,3 +6,4 @@ export { Loader } from "./loader/Loader";
 export { ToastContainer } from "./toast/ToastContainer";
 export { PrivateRoute } from "./private-route/PrivateRoute";
 export { RestrictedRoute } from "./restricted-route/RestrictedRoute";
+export { FilterSidebar } from "./products/filter-sidebar/FilterSidebar";

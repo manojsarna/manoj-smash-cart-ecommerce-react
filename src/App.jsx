@@ -4,12 +4,20 @@ import MockAPI from "./Mockman";
 import {
   Header,
   Footer,
-  Main,
   PrivateRoute,
   RestrictedRoute,
   ToastContainer,
 } from "./components";
-import { Auth, Cart, Home, Page404, Products, User, WishList } from "./pages";
+import {
+  Auth,
+  Cart,
+  Home,
+  Page404,
+  ProductPage,
+  Products,
+  User,
+  WishList,
+} from "./pages";
 
 function App() {
   return (

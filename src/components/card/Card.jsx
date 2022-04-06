@@ -1,14 +1,27 @@
 import "./card.css";
 import { useNavigate } from "react-router-dom";
-import { useAuth, useWishList } from "../../context";
+import { useAuth, useCart, useWishList } from "../../context";
 export function Card({ product }) {
   const { user } = useAuth();
   const navigate = useNavigate();
   const { wishList, addToWishList, removeFromWishList } = useWishList();
+  const { cart, addToCart } = useCart();
 
-  const productInWishList = wishList?.some((p) => p._id === product._id)
+  const isProductInWishList = wishList?.some((p) => p._id === product._id)
     ? true
     : false;
+
+  const isProductInCart = cart?.some((p) => p._id === product._id)
+    ? true
+    : false;
+
+  const cartButtonHandler = () => {
+    user
+      ? isProductInCart
+        ? navigate("/cart")
+        : addToCart(product)
+      : navigate("/auth");
+  };
   return (
     <div className="sm-card">
       <div className="sm-card-img">
@@ -18,14 +31,14 @@ export function Card({ product }) {
         <button
           className="sm-card-fav"
           title={`${
-            productInWishList && user
+            isProductInWishList && user
               ? "Remove From Wishlist"
               : "Add To Wishlist"
           }`}
           onClick={() => {
             if (!user) {
               navigate("/auth");
-            } else if (productInWishList) {
+            } else if (isProductInWishList) {
               removeFromWishList(product);
             } else {
               addToWishList(product);
@@ -33,7 +46,9 @@ export function Card({ product }) {
           }}
         >
           <i
-            className={`fa-heart ${productInWishList && user ? "fas" : "far"}`}
+            className={`fa-heart ${
+              isProductInWishList && user ? "fas" : "far"
+            }`}
           ></i>
         </button>
         <img src={product.image} alt={product.imageAlt} />
@@ -45,14 +60,12 @@ export function Card({ product }) {
         <h2 className="sm-card-content-brand" title="Click To Know More!!">
           <p className="sm-card-flex-rating">
             {`by `}&nbsp;
-            <a href="#" className="link-brand">
-              {product.brandName}
-            </a>
-            <span className="sm-card-rating">
-              <i className="fas fa-star"></i>
-              &nbsp;{product.rating}
-            </span>
+            <span className="link-brand">{product.brandName}</span>
           </p>
+          <span className="sm-card-rating">
+            <i className="fas fa-star"></i>
+            &nbsp;{product.rating}
+          </span>
         </h2>
 
         <div className="sm-card-info">
@@ -65,9 +78,20 @@ export function Card({ product }) {
               {`(${product.discount}%Off)`}
             </span>
           </span>
-          <button className="btn btn-primary cart-btn">
+          <button
+            className="btn btn-primary cart-btn"
+            onClick={() => {
+              if (!user) {
+                navigate("/auth");
+              } else if (isProductInCart) {
+                navigate("/cart");
+              } else {
+                addToCart(product);
+              }
+            }}
+          >
             <i className="btn-cart fas fa-shopping-cart"></i>
-            Add To Cart
+            {isProductInCart && user ? "Go To Cart" : "Add To Cart"}
           </button>
         </div>
       </div>

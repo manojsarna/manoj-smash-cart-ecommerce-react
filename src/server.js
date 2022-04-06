@@ -30,7 +30,7 @@ import {
 import { categories } from "./backend/db/categories";
 import { products } from "./backend/db/products";
 import { users } from "./backend/db/users";
-import { brands } from "./backend/db/brand";
+import { brands } from "./backend/db/brands";
 
 export function makeServer({ environment = "development" } = {}) {
   return new Server({

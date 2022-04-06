@@ -35,27 +35,29 @@ function WishListProvider({ children }) {
   }, [encodedToken]);
 
   const addToWishList = async (item) => {
-    try {
-      const response = await axios.post(
-        "/api/user/wishlist",
-        { product: item },
-        {
-          headers: {
-            authorization: encodedToken,
-          },
+    const ifItemInWishlist = wishList.some((p) => p._id === item._id);
+    if (!ifItemInWishlist) {
+      try {
+        const response = await axios.post(
+          "/api/user/wishlist",
+          { product: item },
+          {
+            headers: {
+              authorization: encodedToken,
+            },
+          }
+        );
+        if (response.status === 201) {
+          setWishList(response.data.wishlist);
+          dispatch({
+            type: "TOAST_SUCCESS",
+            payload: "Added to Wishlist",
+          });
         }
-      );
-
-      if (response.status === 201) {
-        setWishList(response.data.wishlist);
-        dispatch({
-          type: "TOAST_SUCCESS",
-          payload: "Added to Wishlist",
-        });
+      } catch (error) {
+        console.error(error.response.data.errors);
+        dispatch({ type: "TOAST_ERROR", payload: error.response.data.errors });
       }
-    } catch (error) {
-      console.error(error.response.data.errors);
-      dispatch({ type: "TOAST_ERROR", payload: error.response.data.errors });
     }
   };
 

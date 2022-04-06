@@ -17,7 +17,6 @@ export function CartIcon() {
               user ? (cart?.length === 0 ? "icon-hide " : "") : "icon-hide"
             } `}
           >
-            {" "}
             {cart.length}
           </span>
         </div>

@@ -26,7 +26,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    tag: "Top",
+    tag: "",
     badgeName: "New",
     image: images.products.p2,
     imageAlt: "badminton",
@@ -43,12 +43,12 @@ export const products = [
     },
     currency: "₹",
     discount: 49,
-    rating: 4.1,
+    rating: 2.4,
     inStock: true,
   },
   {
     _id: uuid(),
-    tag: "Top",
+    tag: "",
     badgeName: "Sale",
     image: images.products.p3,
     imageAlt: "badminton",
@@ -70,7 +70,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    tag: "Top",
+    tag: "",
     badgeName: "Sponsored",
     image: images.products.p4,
     imageAlt: "badminton",
@@ -92,7 +92,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    tag: "Top",
+    tag: "",
     badgeName: "",
     image: images.products.p4,
     imageAlt: "badminton",
@@ -114,7 +114,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    tag: "Top",
+    tag: "",
     badgeName: "",
     image: images.products.p5,
     imageAlt: "badminton",
@@ -138,7 +138,7 @@ export const products = [
   {
     _id: uuid(),
     tag: "Top",
-    badgeName: "",
+    badgeName: "Sale",
     image: images.products.p6,
     imageAlt: "badminton",
     title: "Lining Racket Bag",
@@ -159,7 +159,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    tag: "Top",
+    tag: "",
     badgeName: "",
     image: images.products.p7,
     imageAlt: "badminton",
@@ -181,7 +181,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    tag: "Top",
+    tag: "",
     badgeName: "",
     image: images.products.p8,
     imageAlt: "badminton",
@@ -203,7 +203,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    tag: "Top",
+    tag: "",
     badgeName: "",
     image: images.products.p8,
     imageAlt: "badminton",
@@ -225,7 +225,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    tag: "Top",
+    tag: "",
     badgeName: "",
     image: images.products.p9,
     imageAlt: "badminton",
@@ -247,7 +247,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    tag: "Top",
+    tag: "",
     badgeName: "",
     image: images.products.p10,
     imageAlt: "badminton",
@@ -270,7 +270,7 @@ export const products = [
   {
     _id: uuid(),
     tag: "Top",
-    badgeName: "",
+    badgeName: "Sponsored",
     image: images.products.p11,
     imageAlt: "badminton",
     title: "Victor Power Cushion Comfort Z Men",
@@ -291,7 +291,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    tag: "Top",
+    tag: "",
     badgeName: "",
     image: images.products.p12,
     imageAlt: "badminton",
@@ -308,12 +308,12 @@ export const products = [
     },
     currency: "₹",
     discount: 50,
-    rating: 3.3,
+    rating: 2.1,
     inStock: true,
   },
   {
     _id: uuid(),
-    tag: "Top",
+    tag: "",
     badgeName: "",
     image: images.products.p12,
     imageAlt: "badminton",
@@ -335,7 +335,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    tag: "Top",
+    tag: "",
     badgeName: "",
     image: images.products.p13,
     imageAlt: "badminton",
@@ -357,7 +357,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    tag: "Top",
+    tag: "",
     badgeName: "",
     image: images.products.p14,
     imageAlt: "badminton",
@@ -379,7 +379,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    tag: "Top",
+    tag: "",
     badgeName: "",
     image: images.products.p15,
     imageAlt: "badminton",
@@ -402,7 +402,7 @@ export const products = [
   {
     _id: uuid(),
     tag: "Top",
-    badgeName: "",
+    badgeName: "New",
     image: images.products.p16,
     imageAlt: "badminton",
     title: "Carlton Forza S-5000 Speed 76 Feather Shuttlecock",
@@ -418,12 +418,12 @@ export const products = [
     },
     currency: "₹",
     discount: 34,
-    rating: 3.6,
+    rating: 2.6,
     inStock: true,
   },
   {
     _id: uuid(),
-    tag: "Top",
+    tag: "",
     badgeName: "",
     image: images.products.p16,
     imageAlt: "badminton",

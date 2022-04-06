@@ -125,6 +125,11 @@
 .icon .icon-hide {
   display: none;
 }
+
+.sm-action-icon-btn-wrapper .sm-header-nav-user-avatar {
+  padding: 5px 10px;
+  margin-bottom: 3px;
+}
 /* HEADER ENDS */
 
 /* MEDIA QUERIES FOR HEADERS*/

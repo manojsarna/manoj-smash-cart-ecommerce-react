@@ -1,0 +1,32 @@
+.sm-main-product-page {
+  display: flex;
+  padding: 2rem 0;
+  height: fit-content;
+  position: relative;
+}
+.sm-main-products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-left: 4rem;
+  margin-bottom: 2rem;
+}
+.sm-main-products-container .sm-card {
+  width: 24rem;
+}
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 480px) {
+  .sm-main-products-container {
+    justify-content: center;
+    margin-left: 0;
+    margin: 0 2rem;
+  }
+  .sm-main-products-container .sm-card {
+    width: 22rem;
+  }
+  .sm-card .sm-card-img {
+    max-height: 21rem;
+  }
+}

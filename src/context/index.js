@@ -5,4 +5,8 @@ export {
   useWishList,
 } from "./wishlist-context/wishlist-context";
 export { CartProvider, useCart } from "./cart-context/cart-context";
+export {
+  ProductsProvider,
+  useProducts,
+} from "./products-context/products-context";
 export { AuthProvider, useAuth } from "./auth-context/auth-context";
