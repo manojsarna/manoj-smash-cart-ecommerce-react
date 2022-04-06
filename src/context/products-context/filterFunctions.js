@@ -38,18 +38,17 @@ export const filterFunctions = (initialState, state, products) => {
     );
   }
 
-  //APPLYING PRICE SORTING
-  if (state.sortByPrice === "PRICE_HIGH_TO_LOW") {
-    finalFilteredData.sort((a, b) => b.price.current - a.price.current);
-  } else if (state.sortByPrice === "PRICE_LOW_TO_HIGH") {
-    finalFilteredData.sort((a, b) => a.price.current - b.price.current);
-  }
-
-  //APPLYING RATING SORTING
-  if (state.sortByRating === "RATING_HIGH_TO_LOW") {
-    finalFilteredData.sort((a, b) => b.rating - a.rating);
-  } else if (state.sortByRating === "RATING_LOW_TO_HIGH") {
-    finalFilteredData.sort((a, b) => a.rating - b.rating);
+  //SORTING - BY PRICE , BY RATING
+  if (state.sort !== null) {
+    if (state.sort === "PRICE_HIGH_TO_LOW") {
+      finalFilteredData.sort((a, b) => b.price.current - a.price.current);
+    } else if (state.sort === "PRICE_LOW_TO_HIGH") {
+      finalFilteredData.sort((a, b) => a.price.current - b.price.current);
+    } else if (state.sort === "RATING_HIGH_TO_LOW") {
+      finalFilteredData.sort((a, b) => b.rating - a.rating);
+    } else if (state.sort === "RATING_LOW_TO_HIGH") {
+      finalFilteredData.sort((a, b) => a.rating - b.rating);
+    }
   }
 
   return finalFilteredData;

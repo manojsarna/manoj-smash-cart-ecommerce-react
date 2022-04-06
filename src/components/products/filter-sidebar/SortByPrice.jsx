@@ -11,7 +11,7 @@ export function SortByPrice() {
             name="price-high-to-low"
             id="price-high-to-low"
             onChange={() => filterDispatch({ type: "PRICE_HIGH_TO_LOW" })}
-            checked={state.sortByPrice === "PRICE_HIGH_TO_LOW"}
+            checked={state.sort === "PRICE_HIGH_TO_LOW"}
           />
           Price : High to Low
         </label>
@@ -23,7 +23,7 @@ export function SortByPrice() {
             name="price-low-to-high"
             id="price-low-to-high"
             onChange={() => filterDispatch({ type: "PRICE_LOW_TO_HIGH" })}
-            checked={state.sortByPrice === "PRICE_LOW_TO_HIGH"}
+            checked={state.sort === "PRICE_LOW_TO_HIGH"}
           />
           Price : Low to High
         </label>

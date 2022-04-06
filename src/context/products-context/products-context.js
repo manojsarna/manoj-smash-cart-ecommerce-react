@@ -49,8 +49,7 @@ function ProductsProvider({ children }) {
 
   const initialState = {
     sidebarShow: false,
-    sortByPrice: null,
-    sortByRating: null,
+    sort: null,
     price: 20000,
     rating: 1,
     brands: [],

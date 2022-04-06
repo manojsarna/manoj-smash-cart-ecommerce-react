@@ -1,8 +1,7 @@
 export const filterReducer = (state, action) => {
   const initialState = {
     sidebarShow: false,
-    sortByPrice: null,
-    sortByRating: null,
+    sort: null,
     price: 20000,
     rating: 1,
     brands: [],
@@ -55,25 +54,25 @@ export const filterReducer = (state, action) => {
     case "PRICE_HIGH_TO_LOW":
       return {
         ...state,
-        sortByPrice: "PRICE_HIGH_TO_LOW",
+        sort: "PRICE_HIGH_TO_LOW",
       };
 
     case "PRICE_LOW_TO_HIGH":
       return {
         ...state,
-        sortByPrice: "PRICE_LOW_TO_HIGH",
+        sort: "PRICE_LOW_TO_HIGH",
       };
 
     case "RATING_HIGH_TO_LOW":
       return {
         ...state,
-        sortByRating: "RATING_HIGH_TO_LOW",
+        sort: "RATING_HIGH_TO_LOW",
       };
 
     case "RATING_LOW_TO_HIGH":
       return {
         ...state,
-        sortByRating: "RATING_LOW_TO_HIGH",
+        sort: "RATING_LOW_TO_HIGH",
       };
 
     case "SEARCH_STRING":
