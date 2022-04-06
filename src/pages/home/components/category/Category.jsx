@@ -5,8 +5,8 @@ export function Category({ categoryItem }) {
   return (
     <div
       className="sm-main-cat-child sm-box-shad-hov"
-      data-title={categoryItem.categoryName}
-      onClick={() => navigate(`/products/${categoryItem.category}`)}
+      title={categoryItem.categoryName}
+      onClick={() => navigate(`/products/?category=${categoryItem.category}`)}
     >
       <img src={categoryItem.image} alt="badminton" />
       <div className="sm-man-cat-text sm-grid-content ">

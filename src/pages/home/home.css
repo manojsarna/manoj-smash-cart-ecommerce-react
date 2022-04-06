@@ -162,43 +162,6 @@
   gap: 2rem;
 }
 
-.sm-card-fav:hover {
-  border: 0;
-}
-
-.sm-card-flex-rating {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.sm-card-flex-rating .sm-card-rating {
-  margin-left: auto;
-  color: var(--COLOR-HEADER-FONT-DARK);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.8rem;
-}
-
-.sm-card-info .sm-card-info-price {
-  font-weight: 800;
-  gap: 10px;
-  grid-gap: 10px;
-}
-
-.sm-card-info .sm-card-info-price-save {
-  padding: 3px;
-}
-
-.sm-card .sm-card-content {
-  padding: 5px;
-}
-
-.sm-card .sm-card-content .sm-card-info {
-  padding: 0;
-  gap: 3px;
-}
-
 /* MAIN ENDS */
 
 /* MEDIA QUERIES */

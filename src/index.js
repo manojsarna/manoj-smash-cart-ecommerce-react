@@ -8,6 +8,7 @@ import { ThemeProvider } from "./context/theme-context/theme-context";
 import {
   AuthProvider,
   CartProvider,
+  ProductsProvider,
   ToastProvider,
   WishListProvider,
 } from "./context";
@@ -17,19 +18,21 @@ makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider>
-      <ToastProvider>
-        <AuthProvider>
-          <CartProvider>
-            <WishListProvider>
-              <Router>
-                <App />
-              </Router>
-            </WishListProvider>
-          </CartProvider>
-        </AuthProvider>
-      </ToastProvider>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider>
+        <ToastProvider>
+          <AuthProvider>
+            <CartProvider>
+              <WishListProvider>
+                <ProductsProvider>
+                  <App />
+                </ProductsProvider>
+              </WishListProvider>
+            </CartProvider>
+          </AuthProvider>
+        </ToastProvider>
+      </ThemeProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );

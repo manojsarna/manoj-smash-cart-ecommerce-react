@@ -40,6 +40,7 @@
   .sm-footer-icons-mobile {
     grid-area: footer;
     display: flex;
+    z-index: 4;
     justify-content: space-evenly;
     align-items: center;
     position: sticky;

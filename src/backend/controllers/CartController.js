@@ -46,6 +46,15 @@ export const addItemToCartHandler = function (schema, request) {
     }
     const userCart = schema.users.findBy({ _id: userId }).cart;
     const { product } = JSON.parse(request.requestBody);
+    if (userCart.some((item) => item._id === product._id)) {
+      return new Response(
+        409,
+        {},
+        {
+          errors: ["The product is already in your cart"],
+        }
+      );
+    }
     userCart.push({
       ...product,
       createdAt: formatDate(),
