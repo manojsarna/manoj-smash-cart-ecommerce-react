@@ -20,12 +20,14 @@ function AuthProvider({ children }) {
           const response = await axios.post("/api/auth/verify", {
             encodedToken: smashCartToken,
           });
-          console.log(response);
           if (response.status === 200) {
             setUser(response.data.user);
           }
         } catch (error) {
-          console.error(error.response);
+          dispatch({
+            type: "TOAST_ERROR",
+            payload: error.response.data.errors,
+          });
         }
       })();
     }
