@@ -35,6 +35,7 @@ function ProductsProvider({ children }) {
       }
     })();
   }, []);
+
   const getProduct = async (item) => {
     try {
       const response = await axios.get(`/api/products/${item._id}`);
@@ -59,7 +60,7 @@ function ProductsProvider({ children }) {
   };
 
   const [state, filterDispatch] = useReducer(filterReducer, initialState);
-  console.log(state);
+  // console.log(state);
 
   const finalFilteredData = filterFunctions(initialState, state, products);
   return (

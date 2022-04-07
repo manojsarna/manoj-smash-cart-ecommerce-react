@@ -1,30 +1,30 @@
 import "./card.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth, useCart, useWishList } from "../../context";
-export function Card({ product }) {
+export function Card({ product, btnName }) {
   const { user } = useAuth();
   const navigate = useNavigate();
   const { wishList, addToWishList, removeFromWishList } = useWishList();
   const { cart, addToCart } = useCart();
 
-  const isProductInWishList = wishList?.some((p) => p._id === product._id)
+  const isProductInWishList = wishList?.some((item) => item._id === product._id)
     ? true
     : false;
 
-  const isProductInCart = cart?.some((p) => p._id === product._id)
+  const isProductInCart = cart?.some((item) => item._id === product._id)
     ? true
     : false;
 
-  const cartButtonHandler = () => {
-    user
-      ? isProductInCart
-        ? navigate("/cart")
-        : addToCart(product)
-      : navigate("/auth");
-  };
   return (
     <div className="sm-card">
-      <div className="sm-card-img">
+      <div
+        className="sm-card-img"
+        title="Go To Product Page"
+        onClick={(e) => {
+          e.stopPropagation();
+          navigate(`/products/${product._id}`);
+        }}
+      >
         {product.badgeName && (
           <span className="sm-card-badge">{product.badgeName}</span>
         )}
@@ -35,7 +35,8 @@ export function Card({ product }) {
               ? "Remove From Wishlist"
               : "Add To Wishlist"
           }`}
-          onClick={() => {
+          onClick={(e) => {
+            e.stopPropagation();
             if (!user) {
               navigate("/auth");
             } else if (isProductInWishList) {
@@ -54,10 +55,14 @@ export function Card({ product }) {
         <img src={product.image} alt={product.imageAlt} />
       </div>
       <div className="sm-card-content">
-        <h2 className="sm-card-content-title" title="Click To Know More!!">
+        <h2
+          className="sm-card-content-title"
+          title="Go To Product Page"
+          onClick={() => navigate(`/products/${product._id}`)}
+        >
           {product.title}
         </h2>
-        <h2 className="sm-card-content-brand" title="Click To Know More!!">
+        <h2 className="sm-card-content-brand">
           <p className="sm-card-flex-rating">
             {`by `}&nbsp;
             <span className="link-brand">{product.brandName}</span>
@@ -80,6 +85,7 @@ export function Card({ product }) {
           </span>
           <button
             className="btn btn-primary cart-btn"
+            title={isProductInCart && user ? "Go To Cart" : btnName}
             onClick={() => {
               if (!user) {
                 navigate("/auth");
@@ -91,7 +97,7 @@ export function Card({ product }) {
             }}
           >
             <i className="btn-cart fas fa-shopping-cart"></i>
-            {isProductInCart && user ? "Go To Cart" : "Add To Cart"}
+            {isProductInCart && user ? "Go To Cart" : btnName}
           </button>
         </div>
       </div>

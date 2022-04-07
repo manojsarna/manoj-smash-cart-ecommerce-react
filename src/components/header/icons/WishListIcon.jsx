@@ -12,13 +12,11 @@ export function WishListIcon() {
       >
         <div className="icon">
           <i className="fas fa-heart"></i>
-          <span
-            className={`icon-badge bd-red icon-bd-top-right ${
-              user ? (wishList?.length === 0 ? "icon-hide " : "") : "icon-hide"
-            } `}
-          >
-            {wishList.length}
-          </span>
+          {user && wishList.length !== 0 && (
+            <span className={`icon-badge bd-red icon-bd-top-right `}>
+              {wishList.length}
+            </span>
+          )}
         </div>
       </button>
     </Link>

@@ -3,14 +3,17 @@
   padding: 2rem 0;
   height: fit-content;
   position: relative;
+  min-height: 100vh;
 }
 .sm-main-products-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: center;
   gap: 2rem;
   margin-left: 4rem;
   margin-bottom: 2rem;
+  align-self: baseline;
 }
 .sm-main-products-container .sm-card {
   width: 24rem;
@@ -19,9 +22,10 @@
 
 @media only screen and (max-width: 480px) {
   .sm-main-products-container {
-    justify-content: center;
     margin-left: 0;
     margin: 0 2rem;
+    align-self: baseline;
+    justify-content: center;
   }
   .sm-main-products-container .sm-card {
     width: 22rem;
