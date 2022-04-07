@@ -1,10 +1,10 @@
-## Smash Cart App using Smash UI
+## Smash Cart App using Smash UI , React.js and MockBee (MockBackend)
 
 <div align="center">
 
 <img alt="badminton" src="/public/logo192.png" width="1048px" height="238px" />
 
-(PR) Smash Cart - Ecommerce App using [Smash UI](https://smashui.netlify.app/) and React.js
+Smash Cart - Ecommerce App using [Smash UI](https://smashui.netlify.app/) and React.js
 
 [![GitHub followers](https://img.shields.io/github/followers/manojsarna?style=social)](https://github.com/manojsarna)
 &emsp;
@@ -18,38 +18,49 @@
 
 ---
 
-## Live Demo: [SmashCart](https://smashcart.netlify.app/)
+## Live Demo: [SmashCart](https://smashcart-react.netlify.app/)
 
 ---
 
 ## Video Demo:
 
-https://user-images.githubusercontent.com/79917843/154931357-1229388a-4cff-4951-bdfa-e77bbd6f1e36.mp4
-
----
+## https://user-images.githubusercontent.com/45617406/162262232-f1f574d6-7968-4d1c-8d23-71a86e39128a.mp4
 
 ## Quick Start
 
-To start using the SmashCart you can visit the following link :
+To start using the SmashCart you can visit the following link : [SmashCart](https://smashcart-react.netlify.app/)
 
-### P0 Screens
+### P0 Features
 
-- [Home Page](https://smashcart.netlify.app/)
-- [Product Listing Page](https://smashcart.netlify.app/lib/components/products/products.html)
-- [Filters - Price, Category, Ratings](https://smashcart.netlify.app/lib/components/products/products.html)
-- [Cart Management](https://smashcart.netlify.app/lib/components/cart/cart.html)
-- [Wishlist Management](https://smashcart.netlify.app/lib/components/wishlist/wishlist.html)
-- [Authentication](https://smashcart.netlify.app/lib/components/auth/auth.html)
+- [Home Page](https://smashcart-react.netlify.app/)
+- [Product Listing Page](https://smashcart-react.netlify.app/)
+- [Filters Products - Price, Category, Ratings, Brands, Out Of Stock](https://smashcart-react.netlify.app/)
+- [Sort Products - Price, Ratings](https://smashcart-react.netlify.app/)
+- [Cart Management](https://smashcart-react.netlify.app/)
+- [Wishlist Management](https://smashcart-react.netlify.app/)
+- [Authentication -SignUp, Login, Logout](https://smashcart-react.netlify.app/)
 
-#### P1 Screens
+#### P1 Features
 
-- [Search](https://smashcart.netlify.app/)
-- [Checkout](https://smashcart.netlify.app/lib/components/cart/cart.html)
+- [Search for an item](https://smashcart-react.netlify.app/)
+- [Checkout Page](https://smashcart-react.netlify.app/)
+- [Single Product Page](https://smashcart-react.netlify.app/)
+- [Loading & Alerts](https://smashcart-react.netlify.app/)
+- [User Profile Page](https://smashcart-react.netlify.app/)
 
-### Features Added
+### Extra Features Added
 
-- Responsive Site (Both desktop and mobile responsive)
+- Custom Toasts with Toast Container
+- Custom Carousel
+- Responsive Site (Both Desktop and Mobile Responsive)
 - Persisting Dark / Light Mode
+- CTAs on Footer in Mobile View
+- Cart Management - ( Add to Cart, Update Items in Cart, Remove from Cart, Add to Wishlist from Cart )
+- Wishlist Management (Add / Remove from Wishlist, Move Items to Cart)
+- Proper Landing page with Featured Categories, Brands and Best Selling Products
+- Product Listing Page with Filter Products - Price, Category, Ratings, Brands, Out Of Stock
+- Product Listing Page with Sort Products - Sort Products - Price, Ratings
+- Remembering Routing History - After Login it will redirect to the path where it was initiated
 
 ---
 
