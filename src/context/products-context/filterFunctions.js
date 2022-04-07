@@ -1,6 +1,4 @@
 export const filterFunctions = (initialState, state, products) => {
-  //const { state, initialState, products } = useProducts();
-  console.log(initialState, state, products);
   let finalFilteredData = products;
 
   //APPLYING PRICE SLIDER FILTER
@@ -35,6 +33,18 @@ export const filterFunctions = (initialState, state, products) => {
   if (initialState.outOfStock !== state.outOfStock) {
     finalFilteredData = finalFilteredData.filter(
       (item) => item.inStock !== state.outOfStock
+    );
+  }
+
+  //APPLYING SEARCH-STRING
+  if (initialState.searchString !== state.searchString) {
+    finalFilteredData = finalFilteredData.filter(
+      (item) =>
+        item.title.toLowerCase().includes(state.searchString.toLowerCase()) ||
+        item.category
+          .toLowerCase()
+          .includes(state.searchString.toLowerCase()) ||
+        item.brand.toLowerCase().includes(state.searchString.toLowerCase())
     );
   }
 

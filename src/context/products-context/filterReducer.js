@@ -78,7 +78,7 @@ export const filterReducer = (state, action) => {
     case "SEARCH_STRING":
       return {
         ...state,
-        searchString: action.payload,
+        searchString: action.payload.trim(),
       };
 
     case "FILTERS_RESET":

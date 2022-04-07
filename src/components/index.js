@@ -1,5 +1,6 @@
 export { Header } from "./header/Header";
 export { Card } from "./card/Card";
+export { CardHorizontal } from "./card/CardHorizontal";
 export { Footer } from "./footer/Footer";
 export { Toast } from "./toast/Toast";
 export { Loader } from "./loader/Loader";

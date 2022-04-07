@@ -21,7 +21,6 @@ export function WishList() {
               >
                 {" "}
                 <i className="fab fa-opencart"></i>
-                {/* <i className="fas fa-play sm-margin-right"></i>  */}
                 Shop Now
               </button>
             </Link>
@@ -30,7 +29,11 @@ export function WishList() {
           )}
 
           {wishList.map((product) => (
-            <Card key={product._id} product={product} />
+            <Card
+              key={product._id}
+              product={product}
+              btnName={"Move To Cart"}
+            />
           ))}
         </div>
       </div>

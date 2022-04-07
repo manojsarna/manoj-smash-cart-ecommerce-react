@@ -160,6 +160,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  padding-bottom: 2rem;
 }
 
 /* MAIN ENDS */

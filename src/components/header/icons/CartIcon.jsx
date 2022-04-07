@@ -4,6 +4,8 @@ import { useAuth, useCart } from "../../../context";
 export function CartIcon() {
   const { cart } = useCart();
   const { user } = useAuth();
+
+  const totalQuantity = cart.reduce((acc, cur) => acc + cur.qty, 0);
   return (
     <Link to="/cart" title="Go To Cart">
       <button
@@ -12,13 +14,11 @@ export function CartIcon() {
       >
         <div className="icon">
           <i className="fas fa-shopping-cart"></i>
-          <span
-            className={`icon-badge bd-red icon-bd-top-right ${
-              user ? (cart?.length === 0 ? "icon-hide " : "") : "icon-hide"
-            } `}
-          >
-            {cart.length}
-          </span>
+          {user && cart.length !== 0 && (
+            <span className={`icon-badge bd-red icon-bd-top-right `}>
+              {totalQuantity}
+            </span>
+          )}
         </div>
       </button>
     </Link>

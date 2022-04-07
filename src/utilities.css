@@ -19,4 +19,5 @@ html {
     "footer";
   grid-template-columns: auto;
   grid-template-rows: auto 1fr auto;
+  transition: all 0.2s ease-in;
 }

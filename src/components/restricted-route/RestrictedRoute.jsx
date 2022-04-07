@@ -5,9 +5,9 @@ import { useAuth } from "../../context";
 export function RestrictedRoute() {
   const { user } = useAuth();
   const location = useLocation();
-
+  const nowGoTo = location?.state?.from?.pathname ?? "/";
   return user ? (
-    <Navigate to="/" state={{ from: location }} replace />
+    <Navigate to={nowGoTo} state={{ from: location }} replace />
   ) : (
     <Outlet />
   );
