@@ -60,7 +60,6 @@ function ProductsProvider({ children }) {
   };
 
   const [state, filterDispatch] = useReducer(filterReducer, initialState);
-  // console.log(state);
 
   const finalFilteredData = filterFunctions(initialState, state, products);
   return (

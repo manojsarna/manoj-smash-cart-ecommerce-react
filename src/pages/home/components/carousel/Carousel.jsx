@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import images from "../../../../assets/images";
+import { useProducts } from "../../../../context";
 
 export function Carousel() {
+  const { filterDispatch } = useProducts();
   const sliderImages = Object.values(images.slider);
   const [imgSrc, setImgSrc] = useState(sliderImages[0]);
   let i = 0;
@@ -27,6 +29,11 @@ export function Carousel() {
             id="carousel-btn"
             className="shop-now-hover btn btn-primary btn-bold"
             title="CheckOut Product Listings"
+            onClick={() => {
+              filterDispatch({
+                type: "FILTERS_RESET",
+              });
+            }}
           >
             <i className="fab fa-opencart"></i>
             Shop Now

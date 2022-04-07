@@ -77,6 +77,11 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
+.rating-slider-label.fas {
+  color: var(--COLOR-HEADER-FONT-DARK);
+  font-size: 1.6rem;
+}
+
 @media only screen and (max-width: 480px) {
   .sm-main-filter-container {
     display: none;

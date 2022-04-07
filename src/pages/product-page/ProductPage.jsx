@@ -15,10 +15,10 @@ export function ProductPage() {
   const { wishList, addToWishList, removeFromWishList } = useWishList();
   const { cart, addToCart } = useCart();
 
-  const { pathname } = useLocation();
+  const pathName = useLocation();
   useEffect(() => {
     window.scrollTo({ behavior: "smooth", top: "0px" });
-  }, [pathname]);
+  }, [pathName]);
 
   const isProductInWishList = wishList?.some((item) => item._id === product._id)
     ? true
@@ -44,7 +44,7 @@ export function ProductPage() {
         <div className="sm-product-badge-container">
           <div className="sm-product-page-rating">
             <i className="fas fa-star"></i>
-            &nbsp;{product.rating}
+            {product.rating}
           </div>
           <div className="sm-product-badge-name">{product.badgeName}</div>
         </div>
@@ -68,7 +68,10 @@ export function ProductPage() {
             className="btn btn-primary cart-btn"
             onClick={() => {
               if (!user) {
-                navigate("/auth");
+                navigate("/auth", {
+                  state: { from: pathName },
+                  replace: true,
+                });
               } else if (isProductInCart) {
                 navigate("/cart");
               } else {
@@ -89,7 +92,10 @@ export function ProductPage() {
             }`}
             onClick={() => {
               if (!user) {
-                navigate("/auth");
+                navigate("/auth", {
+                  state: { from: pathName },
+                  replace: true,
+                });
               } else if (isProductInWishList) {
                 removeFromWishList(product);
               } else {
